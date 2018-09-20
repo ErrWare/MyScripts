@@ -5,3 +5,4 @@ PythonScripts/soc.py
 PythonScripts/osrs.py
 *osrs.*
 *sproutslist*
+*.json
