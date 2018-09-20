@@ -1,3 +1,3 @@
 @echo off
-cd %~dp0PythonScripts
-python search.py %*
+
+python %~dp0PythonScripts\search.py %*

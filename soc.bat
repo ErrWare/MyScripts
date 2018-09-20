@@ -1,3 +1,3 @@
 @echo off
-cd %~dp0PythonScripts
-python soc.py %*
+
+python %~dp0PythonScripts\soc.py %*

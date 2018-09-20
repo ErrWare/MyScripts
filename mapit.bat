@@ -1,3 +1,3 @@
 @echo off
-cd %~dp0PythonScripts
-python mapit.py %*
+
+python %~dp0PythonScripts\mapit.py %*

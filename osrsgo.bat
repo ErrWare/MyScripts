@@ -1,3 +1,3 @@
 @echo off
-cd %~dp0PythonScripts
-python osrsgo.py %*
+
+python %~dp0PythonScripts\osrsgo.py %*

@@ -1,3 +1,3 @@
 @echo off
-cd %~dp0PythonScripts
-python shop.py %*
+
+python %~dp0PythonScripts\shop.py %*

@@ -1,3 +1,3 @@
 @echo off
-cd %~dp0PythonScripts
-python beboshy.py %*
+
+python %~dp0PythonScripts\beboshy.py %*

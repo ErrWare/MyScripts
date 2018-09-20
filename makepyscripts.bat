@@ -1,3 +1,3 @@
 @echo off
-cd %~dp0PythonScripts
-python makepyscripts.py %*
+
+python %~dp0PythonScripts\makepyscripts.py %~dp0

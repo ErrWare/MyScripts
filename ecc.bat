@@ -1,3 +1,3 @@
 @echo off
-cd %~dp0PythonScripts
-python ecc.py %*
+
+python %~dp0PythonScripts\ecc.py %*
