@@ -6,3 +6,4 @@ PythonScripts/osrs.py
 *osrs.*
 *sproutslist*
 *.json
+!mainmailTEMPLATE.json
