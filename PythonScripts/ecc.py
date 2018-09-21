@@ -7,7 +7,6 @@ import emailhelper
 with open('mainmail.json','r') as mailFile:
 	mailInfo = json.load(mailFile)
 
-# TODO: change client to depend on email extension (gmail, yahoo, etc)
 imapdomain = emailhelper.getIMAPDetails(mailInfo['address'])
 imapObj = imapclient.IMAPClient(imapdomain, ssl=True)
 
