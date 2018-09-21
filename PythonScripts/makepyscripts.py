@@ -8,10 +8,14 @@ bat_dir = sys.argv[1]
 
 REAL_SCRIPT_EXTENSION = '.py'
 
+# all the script files in our scripts folder
 scripts = [file for file in os.listdir(os.path.join(bat_dir,'PythonScripts')) if file.endswith(REAL_SCRIPT_EXTENSION)]
+# all the files that are scripts but aren't supposed to be directly run (modules)
+ignore = ['emailhelper.py']
+
 saved_dir = os.getcwd()
 os.chdir(bat_dir)
-for script in scripts:
+for script in scripts and script not in ignore:
 	print(script)
 	with open(script[0:-len(REAL_SCRIPT_EXTENSION)]+'.bat', 'w') as exeScript:
 		exeScript.write('@echo off\n')
