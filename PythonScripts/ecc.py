@@ -2,12 +2,14 @@ import json
 import pyperclip
 import imapclient
 import pyzmail
+import emailhelper
 
 with open('mainmail.json','r') as mailFile:
 	mailInfo = json.load(mailFile)
 
 # TODO: change client to depend on email extension (gmail, yahoo, etc)
-imapObj = imapclient.IMAPClient('imap.gmail.com', ssl=True)
+imapdomain = emailhelper.getIMAPDetails(mailInfo['address'])
+imapObj = imapclient.IMAPClient(imapdomain, ssl=True)
 
 imapObj.login(mailInfo['address'], mailInfo['password'])
 
@@ -37,6 +39,6 @@ else:
 text = text.split('\r\n')
 text = [line for line in text if not line.startswith('X-Antivirus')]
 text = '\r\n'.join(text).strip()
-
+print('Copied: ' + text)
 pyperclip.copy(text)
 

@@ -2,13 +2,16 @@ import json
 import pyperclip
 import smtplib
 import pyzmail
+import sys
+import emailhelper
 
-
+print('Args: ' + str(len(sys.argv)))
 with open('mainmail.json','r') as mailFile:
 	mailInfo = json.load(mailFile)
 
 # TODO: change client to depend on email extension (gmail, yahoo, etc)
-smtpObj = smtplib.SMTP('smtp.gmail.com', 587)
+smtpdomain, port = emailhelper.getSMTPDetails(mailInfo['address'])
+smtpObj = smtplib.SMTP(smtpdomain, port)
 smtpObj.ehlo()
 smtpObj.starttls()
 
