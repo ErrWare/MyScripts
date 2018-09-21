@@ -41,4 +41,4 @@ this is because I often want to quickly transfer some information from one compu
 
 soc:
 </br>&nbsp;&nbsp;&nbsp;&nbsp;
-stands for 'social'. opens the links specified in socLinks.json. a template is provided.
+stands for 'social'. opens the links specified in socList.json. a template is provided.
