@@ -1,9 +1,9 @@
 *[hH]eader*
 ShoppingProject*
 *.vscode
-PythonScripts/soc.py
 PythonScripts/osrs.py
 *osrs.*
 *sproutslist*
 *.json
-!mainmailTEMPLATE.json
+
+!*TEMPLATE.json
