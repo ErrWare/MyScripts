@@ -1,9 +1,12 @@
-
 import webbrowser
 import requests
 import json
+import inspect
+import os
+py_dir = os.path.dirname(inspect.stack()[0][1])
+
 # SPROUTS:
-file = open('sproutsHeader.json','r')
+file = open(os.path.join(py_dir,'sproutsHeader.json'),'r')
 headers = json.loads(file.read())
 file.close()
 sprouts_produce = 'https://shop.sprouts.com/api/v2/store_products?_nocache=1536272806020&category_id=1&limit=90&offset=0&sort=price_low&tags=on_sale'
