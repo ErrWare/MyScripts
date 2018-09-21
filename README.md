@@ -38,3 +38,7 @@ stand for email-control-c and email-control-v
 as per ordinary copy and paste they either copy from or paste to (and send) a copy subject email using the information in mainmail.json
 </br>&nbsp;&nbsp;&nbsp;&nbsp;
 this is because I often want to quickly transfer some information from one computer to another
+
+soc:
+</br>&nbsp;&nbsp;&nbsp;&nbsp;
+stands for 'social'. opens the links specified in socList.json. a template is provided.
