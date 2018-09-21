@@ -1,4 +1,6 @@
 import re
+import imapclient
+import smtplib
 
 if __name__ == '__main__':
 	print('This module helps get get the right imap and smtp connections for various emails')
@@ -47,3 +49,26 @@ def getIMAPDetails(email):
 
 	print('Domain Name ' + str(domain) + ' not recognized')
 	return None
+
+def loginSMTP(mailInfo):
+	smtpdomain, port = getSMTPDetails(mailInfo['address'])
+	smtpObj = smtplib.SMTP(smtpdomain, port)
+	smtpObj.ehlo()
+	smtpObj.starttls()
+
+	smtpObj.login(mailInfo['address'], mailInfo['password'])
+	return smtpObj
+
+def loginIMAP(mailInfo):
+	imapdomain = getIMAPDetails(mailInfo['address'])
+	imapObj = imapclient.IMAPClient(imapdomain, ssl=True)
+
+	imapObj.login(mailInfo['address'], mailInfo['password'])
+	return imapObj
+
+
+def login(mailInfo):
+	smtpObj = loginSMTP(mailInfo)
+	imapObj = loginIMAP(mailInfo)
+	return smtpObj, imapObj
+
