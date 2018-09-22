@@ -5,5 +5,5 @@ PythonScripts/osrs.py
 *osrs.*
 *sproutslist*
 *.json
-
+*__pycache__*
 !*TEMPLATE.json
