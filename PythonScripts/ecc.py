@@ -3,14 +3,14 @@ import pyperclip
 import imapclient
 import pyzmail
 import emailhelper
+import os
+import inspect
 
-with open('mainmail.json','r') as mailFile:
+py_dir = os.path.dirname(inspect.stack()[0][1])
+with open(os.path.join(py_dir,'mainmail.json'),'r') as mailFile:
 	mailInfo = json.load(mailFile)
 
-imapdomain = emailhelper.getIMAPDetails(mailInfo['address'])
-imapObj = imapclient.IMAPClient(imapdomain, ssl=True)
-
-imapObj.login(mailInfo['address'], mailInfo['password'])
+_, imapObj = emailhelper.login(mailInfo)
 
 imapObj.select_folder('INBOX', readonly=False)
 

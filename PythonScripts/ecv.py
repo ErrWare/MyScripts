@@ -4,21 +4,20 @@ import smtplib
 import pyzmail
 import sys
 import emailhelper
+import os
+import inspect
 
 print('Args: ' + str(len(sys.argv)))
-with open('mainmail.json','r') as mailFile:
+py_dir = os.path.dirname(inspect.stack()[0][1])
+with open(os.path.join(py_dir,'mainmail.json'),'r') as mailFile:
 	mailInfo = json.load(mailFile)
 
-smtpdomain, port = emailhelper.getSMTPDetails(mailInfo['address'])
-smtpObj = smtplib.SMTP(smtpdomain, port)
-smtpObj.ehlo()
-smtpObj.starttls()
+smtpObj, _ = emailhelper.login(mailInfo)
 
-smtpObj.login(mailInfo['address'], mailInfo['password'])
 # determine what to paste
 if len(sys.argv) > 1:
 	text = ' '.join(sys.argv[1:])
-else
+else:
 	text = pyperclip.paste()
 print('Pasted: ' + text)
 smtpObj.sendmail(mailInfo['address'],mailInfo['address'],
