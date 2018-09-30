@@ -42,3 +42,8 @@ this is because I often want to quickly transfer some information from one compu
 soc:
 </br>&nbsp;&nbsp;&nbsp;&nbsp;
 stands for 'social'. opens the links specified in socList.json. a template is provided.
+
+sym:
+</br>&nbsp;&nbsp;&nbsp;&nbsp;
+stands for 'symbol'. opens a command prompt interface that prompts for symbol name. then copies that symbol to clipboard if familiar.
+
