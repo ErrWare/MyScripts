@@ -37,3 +37,5 @@ while True:
 		pyperclip.copy('√')
 	elif inp in ['inf', 'infinity']:
 		pyperclip.copy('∞')
+
+	print('now in clipboard:\t', pyperclip.paste())
