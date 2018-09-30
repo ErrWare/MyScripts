@@ -15,7 +15,7 @@ ignore = ['emailhelper.py']
 
 saved_dir = os.getcwd()
 os.chdir(bat_dir)
-for script in scripts and script not in ignore:
+for script in [s for s in scripts if s not in ignore]:
 	print(script)
 	with open(script[0:-len(REAL_SCRIPT_EXTENSION)]+'.bat', 'w') as exeScript:
 		exeScript.write('@echo off\n')
