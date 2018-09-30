@@ -45,5 +45,5 @@ stands for 'social'. opens the links specified in socList.json. a template is pr
 
 sym:
 </br>&nbsp;&nbsp;&nbsp;&nbsp;
-stands for 'symbol'. opens a command prompt interface that prompts for symbol name. then copies that symbol to clipboard if familiar.
+stands for 'symbol'. helps with copying familiar symbols to clipboard.
 
